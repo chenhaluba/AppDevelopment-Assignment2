@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Hearts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="app">
+        <header class="top-bar">
+            <div class="brand">
+                <div class="logo">♥</div>
+                <div>
+                    <h1>Flex Hearts</h1>
+                    <p>Learn Flexbox by arranging the hearts</p>
+                </div>
+            </div>
+            <div id="levelCounter" class="level-counter">Level 1 of 8</div>
+        </header>
+
+        <section class="workspace">
+            <div class="game-side">
+                <div class="card mission-card">
+                    <div class="mission-text">
+                        <span class="label">CURRENT MISSION</span>
+                        <h2 id="levelTitle"></h2>
+                        <p id="instruction"></p>
+                        <button id="helpButton" class="help-button">Need help?</button>
+                    </div>
+                    <div id="attempts" class="attempts">Attempts: 0</div>
+                </div>
+
+                <div class="card board-shell">
+                    <div id="board" class="board"></div>
+                </div>
+
+                <div class="progress-area">
+                    <span>Progress</span>
+                    <div id="levelButtons" class="level-buttons"></div>
+                </div>
+            </div>
+
+            <aside class="card control-panel">
+                <div class="panel-heading">
+                    <div class="panel-icon">&lt;/&gt;</div>
+                    <div>
+                        <h3>Flexbox Controls</h3>
+                        <p>Change the properties and test your layout.</p>
+                    </div>
+                </div>
+
+                <div class="control">
+                    <label for="direction">flex-direction</label>
+                    <select id="direction">
+                        <option value="row">row</option>
+                        <option value="row-reverse">row-reverse</option>
+                        <option value="column">column</option>
+                        <option value="column-reverse">column-reverse</option>
+                    </select>
+                </div>
+
+                <div class="control">
+                    <label for="justify">justify-content</label>
+                    <select id="justify">
+                        <option value="flex-start">flex-start</option>
+                        <option value="center">center</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="space-between">space-between</option>
+                        <option value="space-around">space-around</option>
+                        <option value="space-evenly">space-evenly</option>
+                    </select>
+                </div>
+
+                <div class="control">
+                    <label for="align">align-items</label>
+                    <select id="align">
+                        <option value="flex-start">flex-start</option>
+                        <option value="center">center</option>
+                        <option value="flex-end">flex-end</option>
+                        <option value="stretch">stretch</option>
+                    </select>
+                </div>
+
+                <div class="control">
+                    <label for="wrap">flex-wrap</label>
+                    <select id="wrap">
+                        <option value="nowrap">nowrap</option>
+                        <option value="wrap">wrap</option>
+                        <option value="wrap-reverse">wrap-reverse</option>
+                    </select>
+                </div>
+
+                <div class="button-row">
+                    <button id="resetButton" class="secondary-button action-button">Reset</button>
+                    <button id="checkButton" class="primary-button action-button">Check Layout</button>
+                </div>
+                <div id="message" class="message"></div>
+            </aside>
+        </section>
+    </main>
+
+    <div id="helpModal" class="modal">
+        <div class="modal-card">
+            <button id="closeHelpButton" class="close-button">×</button>
+            <div class="modal-icon">?</div>
+            <span class="label">LEVEL HINT</span>
+            <h2 id="helpTitle"></h2>
+            <p id="helpEnglish"></p>
+            <div class="hebrew-help"><p id="helpHebrew"></p></div>
+            <button id="gotItButton" class="modal-button">Got it</button>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div id="successCard" class="modal-card">
+            <div id="successIcon" class="modal-icon success-icon">♥</div>
+            <span id="successLabel" class="label">LEVEL COMPLETE</span>
+            <h2 id="successTitle"></h2>
+            <p id="successText"></p>
+            <div id="successAttempts" class="success-info"></div>
+            <button id="continueButton" class="modal-button success-button">Continue →</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
